@@ -1,24 +1,24 @@
 # aql-webapp
  
-structure..
-web_application
- +--app
- |   +--config
- |   |   +--config.php
- |   +--data
- |   +--lib
- |   |   +--functions.php
- |   +--model
- |   |   +--home.php
- |   +--view
- |       +--404.phtml
- |       +--layout.phtml
- |       +--home.phtml
- +--public
-     +--index.php
-     +--css
-     |   +--style.css
-     +--framework
-     +--js
-     +--plugin
-     +--theme
+structure..<br>
+web_application<br>
+ +--app<br>
+ |   +--config<br>
+ |   |   +--config.php<br>
+ |   +--data<br>
+ |   +--lib<br>
+ |   |   +--functions.php<br>
+ |   +--model<br>
+ |   |   +--home.php<br>
+ |   +--view<br>
+ |       +--404.phtml<br>
+ |       +--layout.phtml<br>
+ |       +--home.phtml<br>
+ +--public<br>
+     +--index.php<br>
+     +--css<br>
+     |   +--style.css<br>
+     +--framework<br>
+     +--js<br>
+     +--plugin<br>
+     +--theme<br>
