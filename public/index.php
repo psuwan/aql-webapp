@@ -16,8 +16,9 @@ if (file_exists($model)) {
     require $model;
 }
 
+$main_content = $_404;
 if(file_exists($view)){
-    require $view;
-}else{
-    require $_404;
+    $main_content = $view;
 }
+
+include $config['PATH2_VIEW'].'layout.phtml';

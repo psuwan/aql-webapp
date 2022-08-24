@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link to own cascade style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Aquila Web</title>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="?page=home">Go to home page</a></li>
+            <li><a href="?page=other">Go to other page</a></li>
+        </ul>
+    </nav>
+    <section id="main">
+        <h1>This is layout</h1>
+        <?php
+        include $main_content;
+        ?>
+    </section>
+</div>
+</body>
+</html>
