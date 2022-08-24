@@ -1,29 +1,715 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- link to own cascade style sheet -->
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Aquila Web</title>
+<head>
+    <meta charset="utf-8"/>
+    <<!--
+    link rel="apple-touch-icon" sizes="76x76" href="./theme/material-dashboard/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="./theme/material-dashboard/assets/img/favicon.png">
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>
+        Material Dashboard by Creative Tim
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="./theme/material-dashboard/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <!-- Bootstrap4 DatetimePicker -->
+    <!--<link rel="stylesheet" href="../css/bootstrap4-datetimepicker.css">-->
+    <!-- DateTimePicker -->
+    <link rel="stylesheet" href="./plugin/datetimepicker/jquery.datetimepicker.copy.css">
+    <style>
+        /* Overide css code กำหนดความกว้างของปฏิทินและอื่นๆ */
+        #ui-datepicker-div {
+            display: none;
+        }
+
+        .ui-datepicker {
+            width: 220px;
+            font-family: tahoma;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /*  css กำหนดปุ่ม ถ้ามีแสดง*/
+        .ui-datepicker-trigger {
+            border: 1px solid #cccccc;
+            background: #ececec !important;
+            padding: 3px;
+        }
+    </style>
+    <!-- Flatpickr DatePicker -->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">-->
+    <!--<link rel="stylesheet" href="../plugin/flatpickr/assets/flatpickr.min.css">-->
+
+    <!-- Thailand Address Auto-Complete -->
+    <link rel="stylesheet" href="./plugin/jquery.Thailand.js/dist/jquery.Thailand.min.css">
 </head>
+
 <body>
-<div class="container">
-    <nav>
-        <ul>
-            <li><a href="?page=home">Go to home page</a></li>
-            <li><a href="?page=other">Go to other page</a></li>
-        </ul>
-    </nav>
-    <section id="main">
-        <h1>This is layout</h1>
-        <?php
-        include $main_content;
-        ?>
-    </section>
+<div class="wrapper ">
+    <!-- Sidebar -->
+    <div class="sidebar" data-color="purple" data-background-color="white"
+         data-image="./theme/material-dashboard/assets/img/sidebar-2.jpg">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+          Tip 2: you can also add an image using data-image tag
+      -->
+        <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                Creative Tim
+            </a></div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li id="id4_sidebar_menu_main_dashboard" class="nav-item ">
+                    <a class="nav-link" href="?page=home">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <!-- Finance Submenu -->
+                <li class="nav-item " id="id4_sidebar_menu_main_finance">
+                    <a class="nav-link" data-toggle="collapse" href="#id4_sidebar_menu_sub_finance">
+                        <i class="material-icons">currency_bitcoin</i>
+                        <p>การเงิน<b class="caret"></b></p>
+                    </a>
+                    <div class="collapse" id="id4_sidebar_menu_sub_finance">
+                        <ul class="nav pl-3">
+                            <li class="nav-item " id="id4_sidebar_menu_sub_income">
+                                <a class="nav-link" href="#">
+                                    <i class="material-icons">sell</i>
+                                    <span class="sidebar-normal"> ขาย </span>
+                                </a>
+                            </li>
+                            <li class="nav-item " id="id4_sidebar_menu_sub_outcome">
+                                <a class="nav-link" href="?page=expenses">
+                                    <i class="material-icons">shopping_basket</i>
+                                    <span class="sidebar-normal"> ซื้อ </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- Submenu -->
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="./user.html">
+                        <i class="material-icons">person</i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./tables.html">
+                        <i class="material-icons">content_paste</i>
+                        <p>Table List</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./typography.html">
+                        <i class="material-icons">library_books</i>
+                        <p>Typography</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./map.html">
+                        <i class="material-icons">location_ons</i>
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./notifications.html">
+                        <i class="material-icons">notifications</i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                <!--
+                <li class="nav-item active-pro ">
+                    <a class="nav-link" href="./upgrade.html">
+                        <i class="material-icons">unarchive</i>
+                        <p>Upgrade to PRO</p>
+                    </a>
+                </li>
+                -->
+            </ul>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href="javascript:;">Dashboard</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <form class="navbar-form">
+                        <div class="input-group no-border">
+                            <input type="text" value="" class="form-control" placeholder="Search...">
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:;">
+                                <i class="material-icons">dashboard</i>
+                                <p class="d-lg-none d-md-block">
+                                    Stats
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="notification">5</span>
+                                <p class="d-lg-none d-md-block">
+                                    Some Actions
+                                </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                                <a class="dropdown-item" href="#">Another Notification</a>
+                                <a class="dropdown-item" href="#">Another One</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">person</i>
+                                <p class="d-lg-none d-md-block">
+                                    Account
+                                </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <!-- your content here -->
+
+                <?php
+                include $main_content;
+                ?>
+
+                <!-- your content here -->
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright float-right">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    , modified with <i class="material-icons">favorite</i> by
+                    <a href="mailto:psuwan.aquila@gmail.com">Pattanappong Suwan</a>
+                </div>
+                <!-- your footer here -->
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
 </div>
+
+
+<!--   Core JS Files   -->
+<script src="./theme/material-dashboard/assets/js/core/jquery.min.js"></script>
+<script src="./theme/material-dashboard/assets/js/core/popper.min.js"></script>
+<script src="./theme/material-dashboard/assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="./theme/material-dashboard/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Plugin for the momentJs  -->
+<script src="./theme/material-dashboard/assets/js/plugins/moment.min.js"></script>
+<!--  Plugin for Sweet Alert -->
+<script src="./theme/material-dashboard/assets/js/plugins/sweetalert2.js"></script>
+<!-- Forms Validations Plugin -->
+<script src="./theme/material-dashboard/assets/js/plugins/jquery.validate.min.js"></script>
+<!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+<script src="./theme/material-dashboard/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+
+<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<!--<script src="./theme/material-dashboard/assets/js/plugins/bootstrap-selectpicker.js"></script>-->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+<script src="./theme/material-dashboard/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+
+<!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+<script src="./theme/material-dashboard/assets/js/plugins/jquery.dataTables.min.js"></script>
+<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<script src="./theme/material-dashboard/assets/js/plugins/bootstrap-tagsinput.js"></script>
+<!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="./theme/material-dashboard/assets/js/plugins/jasny-bootstrap.min.js"></script>
+<!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+<script src="./theme/material-dashboard/assets/js/plugins/fullcalendar.min.js"></script>
+<!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+<script src="./theme/material-dashboard/assets/js/plugins/jquery-jvectormap.js"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="./theme/material-dashboard/assets/js/plugins/nouislider.min.js"></script>
+<!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<!-- Library for adding dinamically elements -->
+<script src="./theme/material-dashboard/assets/js/plugins/arrive.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="./theme/material-dashboard/assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="./theme/material-dashboard/assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="./theme/material-dashboard/assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="./theme/material-dashboard/assets/demo/demo.js"></script>
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+<!-- FlatPicker DatePicker -->
+<!--<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/th.js"></script>-->
+<!--<script src="../plugin/flatpickr/assets/flatpickr.js"></script>-->
+<!--<script src="../plugin/flatpickr/assets/th.js"></script>-->
+<script>
+    $(document).ready(function () {
+        <!-- Bootstrap Select for all select -->
+        $('.bootstrap-select').selectpicker();
+        <!-- Select2 -->
+        $('.select2-basic-single').select2();
+
+        // let beYear =
+        /*$(".datetimepicker2").flatpickr(
+            {
+                altInput: true,
+                altFormat: "j F Y",
+                dateFormat: "Y-m-d",
+                locale: "th"
+            }
+        );*/
+        //beYear.changeYear(new Date().getFullYear() + 543);
+
+
+        // Expand and active: sub-menu
+        $('#id4_sidebar_menu_sub_finance').addClass('show');
+        $('#id4_sidebar_menu_sub_outcome').addClass('active');
+
+        $().ready(function () {
+            $sidebar = $('.sidebar');
+
+            $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+            $full_page = $('.full-page');
+
+            $sidebar_responsive = $('body > .navbar-collapse');
+
+            window_width = $(window).width();
+
+            fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+            if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+                if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                    $('.fixed-plugin .dropdown').addClass('open');
+                }
+
+            }
+
+            $('.fixed-plugin a').click(function (event) {
+                // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                if ($(this).hasClass('switch-trigger')) {
+                    if (event.stopPropagation) {
+                        event.stopPropagation();
+                    } else if (window.event) {
+                        window.event.cancelBubble = true;
+                    }
+                }
+            });
+
+            $('.fixed-plugin .active-color span').click(function () {
+                $full_page_background = $('.full-page-background');
+
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+
+                var new_color = $(this).data('color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-color', new_color);
+                }
+
+                if ($full_page.length != 0) {
+                    $full_page.attr('filter-color', new_color);
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.attr('data-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .background-color .badge').click(function () {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+
+                var new_color = $(this).data('background-color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-background-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .img-holder').click(function () {
+                $full_page_background = $('.full-page-background');
+
+                $(this).parent('li').siblings().removeClass('active');
+                $(this).parent('li').addClass('active');
+
+
+                var new_image = $(this).find("img").attr('src');
+
+                if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    $sidebar_img_container.fadeOut('fast', function () {
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $sidebar_img_container.fadeIn('fast');
+                    });
+                }
+
+                if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                    $full_page_background.fadeOut('fast', function () {
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                        $full_page_background.fadeIn('fast');
+                    });
+                }
+
+                if ($('.switch-sidebar-image input:checked').length == 0) {
+                    var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                    $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                    $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                }
+            });
+
+            $('.switch-sidebar-image input').change(function () {
+                $full_page_background = $('.full-page-background');
+
+                $input = $(this);
+
+                if ($input.is(':checked')) {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar_img_container.fadeIn('fast');
+                        $sidebar.attr('data-image', '#');
+                    }
+
+                    if ($full_page_background.length != 0) {
+                        $full_page_background.fadeIn('fast');
+                        $full_page.attr('data-image', '#');
+                    }
+
+                    background_image = true;
+                } else {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar.removeAttr('data-image');
+                        $sidebar_img_container.fadeOut('fast');
+                    }
+
+                    if ($full_page_background.length != 0) {
+                        $full_page.removeAttr('data-image', '#');
+                        $full_page_background.fadeOut('fast');
+                    }
+
+                    background_image = false;
+                }
+            });
+
+            $('.switch-sidebar-mini input').change(function () {
+                $body = $('body');
+
+                $input = $(this);
+
+                if (md.misc.sidebar_mini_active == true) {
+                    $('body').removeClass('sidebar-mini');
+                    md.misc.sidebar_mini_active = false;
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                } else {
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                    setTimeout(function () {
+                        $('body').addClass('sidebar-mini');
+
+                        md.misc.sidebar_mini_active = true;
+                    }, 300);
+                }
+
+                // we simulate the window Resize so the charts will get updated in realtime.
+                var simulateWindowResize = setInterval(function () {
+                    window.dispatchEvent(new Event('resize'));
+                }, 180);
+
+                // we stop the simulation of Window Resize after the animations are completed
+                setTimeout(function () {
+                    clearInterval(simulateWindowResize);
+                }, 1000);
+
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        if ($('.card-header.card-chart').length != 0) {
+            md.initDashboardPageCharts();
+        }
+
+        if ($('#websiteViewsChart').length != 0) {
+            md.initDocumentationCharts();
+        }
+
+        if ($('.datetimepicker').length != 0) {
+            md.initFormExtendedDatetimepickers();
+        }
+        if ($('#fullCalendar').length != 0) {
+            md.initFullCalendar();
+        }
+
+        if ($('.slider').length != 0) {
+            md.initSliders();
+        }
+
+        //  Activate the tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Activate Popovers
+        $('[data-toggle="popover"]').popover();
+
+        // Vector map
+        if ($('#worldMap').length != 0) {
+            md.initVectorMap();
+        }
+
+        if ($('#RegisterValidation').length != 0) {
+
+            setFormValidation('#RegisterValidation');
+
+            function setFormValidation(id) {
+                $(id).validate({
+                    highlight: function (element) {
+                        $(element).closest('.form-group').removeClass('has-success').addClass('has-danger');
+                        $(element).closest('.form-check').removeClass('has-success').addClass('has-danger');
+                    },
+                    success: function (element) {
+                        $(element).closest('.form-group').removeClass('has-danger').addClass('has-success');
+                        $(element).closest('.form-check').removeClass('has-danger').addClass('has-success');
+                    },
+                    errorPlacement: function (error, element) {
+                        $(element).closest('.form-group').append(error);
+                    },
+                });
+            }
+        }
+
+    });
+
+    // Input type files in Creative Material theme
+    // FileInput
+    $('.form-file-simple .inputFileVisible').click(function () {
+        $(this).siblings('.inputFileHidden').trigger('click');
+    });
+
+    $('.form-file-simple .inputFileHidden').change(function () {
+        var filename = $(this).val().replace(/C:\\fakepath\\/i, '');
+        $(this).siblings('.inputFileVisible').val(filename);
+    });
+
+    $('.form-file-multiple .inputFileVisible, .form-file-multiple .input-group-btn').click(function () {
+        $(this).parent().parent().find('.inputFileHidden').trigger('click');
+        $(this).parent().parent().addClass('is-focused');
+    });
+
+    $('.form-file-multiple .inputFileHidden').change(function () {
+        var names = '';
+        for (var i = 0; i < $(this).get(0).files.length; ++i) {
+            if (i < $(this).get(0).files.length - 1) {
+                names += $(this).get(0).files.item(i).name + ', ';
+            } else {
+                names += $(this).get(0).files.item(i).name;
+            }
+        }
+        $(this).siblings('.input-group').find('.inputFileVisible').val(names);
+    });
+
+    $('.form-file-multiple .btn').on('focus', function () {
+        $(this).parent().siblings().trigger('focus');
+    });
+
+    $('.form-file-multiple .btn').on('focusout', function () {
+        $(this).parent().siblings().trigger('focusout');
+    });
+    // End FileInput
+</script>
+
+<!-- dependencies for zip mode -->
+<script type="text/javascript" src="./plugin/jquery.Thailand.js/dependencies/zip.js/zip.js"></script>
+<!-- / dependencies for zip mode -->
+
+<script type="text/javascript" src="./plugin/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+<script type="text/javascript" src="./plugin/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+
+<script type="text/javascript" src="./plugin/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+<script type="text/javascript">
+    /******************\
+     *     DEMO 1     *
+     \******************/
+    // demo 1: load database from json. if your server is support gzip. we recommended to use this rather than zip.
+    // for more info check README.md
+
+    $.Thailand({
+        database: './plugin/jquery.Thailand.js/database/db.json',
+
+        $district: $('#demo1 [name="district"]'),
+        $amphoe: $('#demo1 [name="amphoe"]'),
+        $province: $('#demo1 [name="province"]'),
+        $zipcode: $('#demo1 [name="zipcode"]'),
+
+        onDataFill: function (data) {
+            console.info('Data Filled', data);
+        },
+
+        onLoad: function () {
+            //console.info('Autocomplete is ready!');
+            $('#loader, .demo').toggle();
+        }
+    });
+
+    // watch on change
+    $('#demo1 [name="district"]').change(function () {
+        //console.log('ตำบล', this.value);
+    });
+    $('#demo1 [name="amphoe"]').change(function () {
+        //console.log('อำเภอ', this.value);
+    });
+    $('#demo1 [name="province"]').change(function () {
+        //console.log('จังหวัด', this.value);
+    });
+    $('#demo1 [name="zipcode"]').change(function () {
+        //console.log('รหัสไปรษณีย์', this.value);
+    });
+
+    /******************\
+     *     DEMO 2     *
+     \******************/
+    // demo 2: load database from zip. for those who doesn't have server that supported gzip.
+    // for more info check README.md
+    $.Thailand({
+        database: './jquery.Thailand.js/database/db.zip',
+        $search: $('#demo2 [name="search"]'),
+
+        onDataFill: function (data) {
+            console.log(data)
+            var html = '<b>ที่อยู่:</b> ตำบล' + data.district + ' อำเภอ' + data.amphoe + ' จังหวัด' + data.province + ' ' + data.zipcode;
+            $('#demo2-output').prepend('<div class="uk-alert-warning" uk-alert><a class="uk-alert-close" uk-close></a>' + html + '</div>');
+        }
+
+    });
+</script>
+
+<!-- Easy Number Separator -->
+<script src="./plugin/easy-number-separator/easy-number-separator.js"></script>
+<!-- DateTimePicker -->
+<script src="./plugin/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+<script>
+    let resultDate = '';
+
+    /*
+     * Using let date2Show = convertToDateThai(new Date("2022-08-18"));
+     */
+    function convertToDateThai(date) {
+        let month_th = [
+            "",
+            "ม.ค.",
+            "ก.พ.",
+            "มี.ค.",
+            "เม.ย.",
+            "พ.ค.",
+            "มิ.ย.",
+            "ก.ค.",
+            "ส.ค.",
+            "ก.ย.",
+            "ต.ค.",
+            "พ.ย.",
+            "ธ.ค."
+        ];
+        // return result = date.getDate() + " " + month_th[(date.getMonth() + 1)] + " " + (date.getFullYear() + 543);
+        return resultDate = date.getDate() + " " + month_th[(date.getMonth() + 1)] + " " + date.getFullYear();
+    }
+
+    function showOnBlur(date) {
+        console.log(convertToDateThai(new Date(date)));
+        document.getElementById('id4_input_buydate').value = 'xxxxxxxxxxxxx';
+    }
+
+    //var date = convertToDateThai( new Date("2022-06-15") );
+    //console.log( date );
+
+    $.datetimepicker.setLocale('th');
+
+    $('#id4_input_buydate').datetimepicker({
+        yearOffset: 543,
+        timepicker: false,
+        format: "Y-m-d"
+    });
+
+    //--> TUNING DATE
+    $("#id4_input_buydate").on("focus", function () {
+        let buyDate = "<?php echo $vc_Date->dateBE($date2Show);  ?>";
+        $("#id4_input_buydate").val(buyDate);
+    });
+    //$("#datetimepicker2").on("focus", function () {
+    //let cusWarBegin = "<?//=dateBE($equipment_cuswardatebegin);?>//";
+    //let cusWarBegin = "<?//=dateBE($cusWarBeginDateTune);?>";
+    //$("#datetimepicker2").val(cusWarBegin);
+    //});
+</script>
+
 </body>
+
 </html>

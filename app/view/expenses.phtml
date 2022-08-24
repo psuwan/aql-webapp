@@ -1,0 +1,367 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">บันทึกรายจ่าย</h4>
+                <p class="card-category">(รายการและเอกสาร)</p>
+            </div>
+            <div class="card-body">
+                <form id="demo1" method="post">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <!--<label for="exampleFormControlSelect1">Example select</label>-->
+                                <div class="bootstrap-select form-control">
+                                    <select class="form-control selectpicker" data-style="btn btn-link"
+                                            id="exampleFormControlSelect1" tabindex="-98">
+                                        <option value="">เลือกงาน/โครงการ</option>
+                                        <option value="99999">อื่นๆ</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ผู้ซื้อ</label>
+                                <input type="text" class="form-control" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">จำนวนเงิน (ตามบิล)</label>
+                                <input type="text"
+                                       class="form-control number-separator text-danger"
+                                       autofocus/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ซื้อจาก</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Tax-ID</label>
+                                <input type="text" class="form-control" max="13"
+                                       pattern="[0-9]{13}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">สาขา</label>
+                                <input type="text" class="form-control" max="5"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">วันที่ซื้อ</label>
+                                <input type="text" class="form-control datetimepicker2"
+                                       id="id4_input_buydate" name="PAY_DATE"
+                                       value="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ที่อยู่ (เลขที่, หมู่บ้าน,
+                                    อาคาร)</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ตำบล/แขวง</label>
+                                <input name="district" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">อำเภอ/เขต</label>
+                                <input name="amphoe" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">จังหวัด</label>
+                                <input name="province" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">รหัสไปรษณีย์</label>
+                                <input name="zipcode" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="bd-example" data-example-id="">
+                                <!--
+                                <div class="form-group form-file-upload form-file-simple bmd-form-group">
+                                    <input type="text" class="form-control inputFileVisible"
+                                           placeholder="Simple chooser...">
+                                    <input type="file" class="inputFileHidden">
+                                </div>
+
+                                <div class="form-group form-file-upload form-file-multiple bmd-form-group">
+                                    <input type="file" multiple="" class="inputFileHidden">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control inputFileVisible"
+                                               placeholder="Single File">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-fab btn-round btn-primary">
+                                                <i class="material-icons">attach_file</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                -->
+                                <div class="form-group form-file-upload form-file-multiple bmd-form-group">
+                                    <label class="bmd-label-floating" for="">เอกสาร</label>
+                                    <input type="file" multiple="" class="inputFileHidden">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control inputFileVisible"
+                                               placeholder="" multiple="" name="file2Post">
+                                        <span class="input-group-btn">
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-round btn-info">
+                                                                <i class="material-icons">layers</i>
+                                                            </button>
+                                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>รายละเอียดรายจ่าย</label>
+                                <div class="form-group">
+                                    <label class="bmd-label-placeholder"> อธิบายรายการ
+                                        (ถ้ามี) </label>
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" name="submit" value="xxx"
+                            class="btn btn-primary btn-round pull-right"> บันทึก
+                    </button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">โครงการ</h4>
+                <p class="card-category">(งานหรือโครงการ)</p>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ชื่อโครงการ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ลูกค้า</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-0">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>รายละเอียดโครงการ</label>
+                                <div class="form-group">
+                                    <label class="bmd-label-placeholder"> อธิบายโครงการ </label>
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-round pull-right">บันทึก</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--<div class="col-md-4">
+        <div class="card card-profile">
+            <div class="card-avatar">
+                <a href="javascript:;">
+                    <img class="img" src="../theme-bs4/material-backend/assets/img/faces/marc.jpg" />
+                </a>
+            </div>
+            <div class="card-body">
+                <h6 class="card-category text-gray">CEO / Co-Founder</h6>
+                <h4 class="card-title">Alec Thompson</h4>
+                <p class="card-description">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                </p>
+                <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Simple Table</h4>
+                <p class="card-category"> Here is a subtitle for this table</p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Country
+                        </th>
+                        <th>
+                            City
+                        </th>
+                        <th>
+                            Salary
+                        </th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Dakota Rice
+                            </td>
+                            <td>
+                                Niger
+                            </td>
+                            <td>
+                                Oud-Turnhout
+                            </td>
+                            <td class="text-primary">
+                                $36,738
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Minerva Hooper
+                            </td>
+                            <td>
+                                Curaçao
+                            </td>
+                            <td>
+                                Sinaai-Waas
+                            </td>
+                            <td class="text-primary">
+                                $23,789
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                Sage Rodriguez
+                            </td>
+                            <td>
+                                Netherlands
+                            </td>
+                            <td>
+                                Baileux
+                            </td>
+                            <td class="text-primary">
+                                $56,142
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                Philip Chaney
+                            </td>
+                            <td>
+                                Korea, South
+                            </td>
+                            <td>
+                                Overland Park
+                            </td>
+                            <td class="text-primary">
+                                $38,735
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                Doris Greene
+                            </td>
+                            <td>
+                                Malawi
+                            </td>
+                            <td>
+                                Feldkirchen in Kärnten
+                            </td>
+                            <td class="text-primary">
+                                $63,542
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                Mason Porter
+                            </td>
+                            <td>
+                                Chile
+                            </td>
+                            <td>
+                                Gloucester
+                            </td>
+                            <td class="text-primary">
+                                $78,615
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

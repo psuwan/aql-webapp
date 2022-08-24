@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="../css/webfont-prompt-light/Prompt-Light.css">
+</head>
+<body>
+
+<h3>DateTimePicker</h3>
+<input type="text" value="" id="datetimepicker"/>
+<hr>
+
+
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="./build/jquery.datetimepicker.full.js"></script>
+<script>
+    $.datetimepicker.setLocale('th');
+
+    $('#datetimepicker').datetimepicker({
+        yearOffset: 543,
+        timepicker: false,
+        format: "Y-m-d",
+    });
+</script>
+
+</body>
+</html>
