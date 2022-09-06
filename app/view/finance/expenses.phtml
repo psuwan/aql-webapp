@@ -2,19 +2,20 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header card-header-primary">
-                <h4 class="card-title">บันทึกรายจ่าย</h4>
+                <h4 class="card-title">บันทึกรายจ่าย&nbsp;[&nbsp;<?= $recordID; ?>&nbsp;]</h4>
                 <p class="card-category">(รายการและเอกสาร)</p>
             </div>
             <div class="card-body">
+                <!-- begin of form -->
                 <form id="demo1" method="post">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <!--<label for="exampleFormControlSelect1">Example select</label>-->
+                                <!--<label for="exampleFormControlSelect1">ใช้ในโครงการ</label>-->
                                 <div class="bootstrap-select form-control">
                                     <select class="form-control selectpicker" data-style="btn btn-link"
-                                            id="exampleFormControlSelect1" tabindex="-98">
-                                        <option value="">เลือกงาน/โครงการ</option>
+                                            data-live-search="true" id="exampleFormControlSelect1" tabindex="-98">
+                                        <option value="">ใช้ในงาน/โครงการ</option>
                                         <option value="99999">อื่นๆ</option>
                                         <option>1</option>
                                         <option>2</option>
@@ -22,16 +23,24 @@
                                         <option>4</option>
                                         <option>5</option>
                                     </select>
-
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="bmd-label-floating">ผู้ซื้อ</label>
                                 <input type="text" class="form-control" value="">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">วันที่ซื้อ</label>
+                                <input type="text" class="form-control datetimepicker2"
+                                       id="id4_input_buydate" name="PAY_DATE"
+                                       value="">
+                            </div>
+                        </div>
+                        <!--
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label class="bmd-label-floating">จำนวนเงิน (ตามบิล)</label>
@@ -40,7 +49,10 @@
                                        autofocus/>
                             </div>
                         </div>
+                        -->
                     </div>
+
+                    <!-- row of supplier -->
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -48,30 +60,23 @@
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Tax-ID</label>
                                 <input type="text" class="form-control" max="13"
                                        pattern="[0-9]{13}"/>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="bmd-label-floating">สาขา</label>
                                 <input type="text" class="form-control" max="5"/>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label class="bmd-label-floating">วันที่ซื้อ</label>
-                                <input type="text" class="form-control datetimepicker2"
-                                       id="id4_input_buydate" name="PAY_DATE"
-                                       value="">
-                            </div>
-                        </div>
-
                     </div>
+                    <!-- row of supplier -->
 
+                    <!-- 2 rows of supplier's address -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -107,66 +112,76 @@
                             </div>
                         </div>
                     </div>
+                    <!-- 2 rows of supplier's address -->
 
+                    <!-- row of file(s) evidence -->
+                    <!--
                     <div class="row">
                         <div class="col-md-12">
                             <div class="bd-example" data-example-id="">
-                                <!--
-                                <div class="form-group form-file-upload form-file-simple bmd-form-group">
-                                    <input type="text" class="form-control inputFileVisible"
-                                           placeholder="Simple chooser...">
-                                    <input type="file" class="inputFileHidden">
-                                </div>
-
-                                <div class="form-group form-file-upload form-file-multiple bmd-form-group">
+                                <div class="form-group form-file-upload form-file-multiple">
                                     <input type="file" multiple="" class="inputFileHidden">
                                     <div class="input-group">
                                         <input type="text" class="form-control inputFileVisible"
-                                               placeholder="Single File">
+                                               placeholder="Multiple Files" multiple>
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-fab btn-round btn-primary">
-                                                <i class="material-icons">attach_file</i>
-                                            </button>
+                                            <button type="button" class="btn btn-fab btn-round btn-primary"
+                                                    data-toggle="tooltip" data-placement="bottom" title="ไฟล์เอกสาร"><i
+                                                        class="material-icons">attach_file</i></button>
                                         </span>
                                     </div>
                                 </div>
-                                -->
-                                <div class="form-group form-file-upload form-file-multiple bmd-form-group">
-                                    <label class="bmd-label-floating" for="">เอกสาร</label>
-                                    <input type="file" multiple="" class="inputFileHidden">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control inputFileVisible"
-                                               placeholder="" multiple="" name="file2Post">
-                                        <span class="input-group-btn">
-                                                            <button type="button"
-                                                                    class="btn btn-fab btn-round btn-info">
-                                                                <i class="material-icons">layers</i>
-                                                            </button>
-                                                        </span>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
+                    -->
 
+                    <!-- test upload -->
+                    <?php $project_refnumber = '111'; ?>
+                    <div class="row">
+                        <div class="col-md-12 border-bottom">
+                            <div class="form-group" id="id4_div_file_<?= $project_refnumber; ?>">
+                                <!--<label for="id4_input_file_projectFile">สำเนาสัญญา/สำเนาโครงการ</label><br>-->
+                                <label class="btn btn-primary btn-fab btn-round" data-toggle="tooltip"
+                                       data-placement="bottom" title="ไฟล์เอกสาร"
+                                       id="id4_button_file_<?= $project_refnumber; ?>"><i class="material-icons">attach_file</i><input
+                                            type="file"
+                                            multiple
+                                            style="display:none;"
+                                            name="proj_file_<?= $project_refnumber; ?>"
+                                            id="id4_input_file_<?= $project_refnumber; ?>"
+                                            onchange="updateFiles2Upload('<?= $project_refnumber; ?>', 'bill_paid', 'expenses.phtml?refNumber2Edit=<?= $project_refnumber; ?>')"/>
+                                </label><span
+                                        id="id4_span4_file_<?= $project_refnumber; ?>"><?= chkFileExist($project_refnumber, "." . DIRECTORY_SEPARATOR . "bill_paid"); ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row of file(s) evidence -->
+
+                    <!-- row of expense details -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>รายละเอียดรายจ่าย</label>
+                                <!--<label>รายละเอียดรายจ่าย</label>-->
                                 <div class="form-group">
-                                    <label class="bmd-label-placeholder"> อธิบายรายการ
-                                        (ถ้ามี) </label>
+                                    <label class="bmd-label-placeholder"> อธิบายรายละเอียดการจ่าย </label>
                                     <textarea class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" name="submit" value="xxx"
-                            class="btn btn-primary btn-round pull-right"> บันทึก
-                    </button>
-                    <div class="clearfix"></div>
+                    <!-- row of expense details -->
+
+                    <!-- row of save button -->
+                    <div class="row d-flex justify-content-end mr-0">
+                        <button type="submit" name="submit" value="xxx"
+                                class="btn btn-primary btn-round pull-right"> บันทึก
+                        </button>
+                    </div>
+                    <!--<div class="clearfix"></div>-->
+                    <!-- row of save button -->
                 </form>
+                <!-- end of form -->
             </div>
         </div>
     </div>
@@ -192,19 +207,67 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">โครงการเริ่ม</label>
+                                <input type="text" class="form-control datetimepicker2"
+                                       id="id4_input_date_prjstart" name="PRJ_DATESTART"
+                                       value="">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">โครงการปิด</label>
+                                <input type="text" class="form-control datetimepicker2"
+                                       id="id4_input_date_prjstop" name="PRJ_DATESTOP"
+                                       value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <!--<label for="exampleFormControlSelect1">ประเภทโครงการ</label>-->
+                                <div class="bootstrap-select form-control">
+                                    <select class="form-control selectpicker" data-style="btn btn-link"
+                                            data-live-search="true" id="exampleFormControlSelect1"
+                                            tabindex="-98">
+                                        <option value="">เลือกประเภทโครงการ</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <span data-toggle="modal" data-target="#exampleModal">
+                             <!--class="btn btn-primary btn-fab btn-fab-mini btn-round mb-2"-->
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="เพิ่มประเภทโครงการ"><button
+                                            type="button" class="btn btn-sm btn-fab btn-round btn-primary mt-4"><i
+                                                class="material-icons">add</i></button></a>
+                            </span>
+                        </div>
+                    </div>
                     <div class="row mt-0">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>รายละเอียดโครงการ</label>
+                                <!--<label>รายละเอียดโครงการ</label>-->
                                 <div class="form-group">
-                                    <label class="bmd-label-placeholder"> อธิบายโครงการ </label>
+                                    <label class="bmd-label-placeholder"> อธิบายรายละเอียดโครงการ </label>
                                     <textarea class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-round pull-right">บันทึก</button>
-                    <div class="clearfix"></div>
+
+                    <div class="row d-flex justify-content-end mr-0">
+                        <button type="submit" class="btn btn-primary btn-round pull-right">บันทึก</button>
+                    </div>
+                    <!--<div class="clearfix"></div>-->
                 </form>
             </div>
         </div>
@@ -228,6 +291,7 @@
     </div>-->
 </div>
 
+<!-- Card show existing data -->
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -362,6 +426,40 @@
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="post">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">เพิ่มประเภทโครงการ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-8 offset-2">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">ประเภทโครงการใหม่</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark btn-round btn-sm" data-dismiss="modal">ปิด
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-round btn-sm">บันทึก</button>
+                </div>
+
+
+            </form>
         </div>
     </div>
 </div>
